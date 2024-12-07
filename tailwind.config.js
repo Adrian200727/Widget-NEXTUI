@@ -1,6 +1,6 @@
 import {nextui} from '@nextui-org/theme'
 
-module.exports = {
+export default {
   content: [
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
