@@ -1,5 +1,3 @@
-import { Image } from "@nextui-org/image";
-
 export default function App() {
   return (
     <div className="">
