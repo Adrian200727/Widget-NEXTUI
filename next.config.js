@@ -4,6 +4,7 @@ const nextConfig = {};
 export default {
   experimental: {
     optimizeFonts: true,
+    esmExternals: "loose",
   },
 
   eslint: {

@@ -23,6 +23,7 @@ import {
 } from "@nextui-org/react";
 
 import { db } from "../../components/lib/firebase/init";
+import { CustomRadio } from "../../components/CustomRadio";
 
 // Definisi tipe data siswa
 interface Student {
@@ -32,37 +33,7 @@ interface Student {
   hobbies: string;
 }
 
-// Custom Radio Button Props
-interface CustomRadioProps {
-  value: string;
-  children: React.ReactNode;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
-// Komponen Custom Radio
-export const CustomRadio = ({
-  value,
-  children,
-  onChange,
-  ...otherProps
-}: CustomRadioProps) => {
-  return (
-    <Radio
-      value={value}
-      onChange={onChange}
-      {...otherProps}
-      classNames={{
-        base: cn(
-          "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between",
-          "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent",
-          "data-[selected=true]:border-primary",
-        ),
-      }}
-    >
-      {children}
-    </Radio>
-  );
-};
 
 export default function BlogPage() {
   const [students, setStudents] = useState<Student[]>([]); // State untuk daftar siswa
