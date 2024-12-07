@@ -6,7 +6,7 @@ export default function App() {
       <article className="group">
         <img
           alt=""
-          src="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+          src="/foto/cctv.jpg"
           className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
         />
 
