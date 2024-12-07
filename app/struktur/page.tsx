@@ -4,13 +4,13 @@ import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
 const members = [
   { role: "Ketua Kelas", name: "AHMAD DHANI", image: "/foto/ketua.jpg" },
-  { role: "Ketua Kelas", name: "RIFALDI ARDIANSYAH", image: "/foto/wakil.jpg" },
+  { role: "Wakil Kelas", name: "RIFALDI ARDIANSYAH", image: "/foto/wakil.jpg" },
   { role: "Sekretaris 1", name: "RAISYAH", image: "/foto/sekr1.jpg" },
   { role: "Sekretaris 2", name: "DIVA FEBY", image: "/foto/sekr2.jpg" },
   { role: "Bendahara 1", name: "PIPIT WULANDARI", image: "/foto/benda1.jpg" },
   { role: "Bendahara 2", name: "M FABIYAN P", image: "/foto/benda2.jpg" },
-  { role: "Keamanan 1", name: "ADRIAN ADIPUTRA", image: "/foto/keamanan1.jpg" },
-  { role: "Keamanan 2", name: "JUAN FARREL", image: "/foto/keamanan2.jpg" },
+  { role: "Keamananan 1", name: "ADRIAN ADIPUTRA", image: "/foto/keamanan1.jpg" },
+  { role: "Keamananan 2", name: "JUAN FARREL", image: "/foto/keamanan2.jpg" },
   { role: "Dokumentasi 1", name: "SAMI ATARI Z", image: "/foto/doku1.jpg" },
   {
     role: "Dokumentasi 2",
