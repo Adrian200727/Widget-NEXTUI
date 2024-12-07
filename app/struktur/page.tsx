@@ -9,7 +9,11 @@ const members = [
   { role: "Sekretaris 2", name: "DIVA FEBY", image: "/foto/sekr2.jpg" },
   { role: "Bendahara 1", name: "PIPIT WULANDARI", image: "/foto/benda1.jpg" },
   { role: "Bendahara 2", name: "M FABIYAN P", image: "/foto/benda2.jpg" },
-  { role: "Keamananan 1", name: "ADRIAN ADIPUTRA", image: "/foto/keamanan1.jpg" },
+  {
+    role: "Keamananan 1",
+    name: "ADRIAN ADIPUTRA",
+    image: "/foto/keamanan1.jpg",
+  },
   { role: "Keamananan 2", name: "JUAN FARREL", image: "/foto/keamanan2.jpg" },
   { role: "Dokumentasi 1", name: "SAMI ATARI Z", image: "/foto/doku1.jpg" },
   {

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, ChangeEvent } from "react";
-import { db } from "../../components/lib/firebase/init";
 import {
   collection,
   getDocs,
@@ -23,6 +22,7 @@ import {
   Radio,
   cn,
 } from "@nextui-org/react";
+import { db } from "../../components/lib/firebase/init";
 
 // Definisi tipe data siswa
 interface Student {
@@ -55,7 +55,7 @@ export const CustomRadio = ({
         base: cn(
           "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between",
           "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent",
-          "data-[selected=true]:border-primary"
+          "data-[selected=true]:border-primary",
         ),
       }}
     >
@@ -109,13 +109,12 @@ export default function BlogPage() {
     });
   };
 
-const handleHobbyChange = (e: ChangeEvent<HTMLInputElement>) => {
-  setForm({
-    ...form,
-    hobby: e.target.value,
-  });
-};
-
+  const handleHobbyChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setForm({
+      ...form,
+      hobby: e.target.value,
+    });
+  };
 
   // Tangani form submit
   const handleSubmit = async () => {

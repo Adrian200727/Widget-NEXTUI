@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 export default function App() {
   return (
     <div className="">
       <article className="group">
-        <img
+        <Image
           alt=""
           src="/foto/cctv.jpg"
           className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
