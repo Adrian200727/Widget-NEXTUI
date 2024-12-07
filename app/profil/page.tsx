@@ -6,8 +6,8 @@ export default function App() {
       <article className="group">
         <Image
           alt=""
-          src="/foto/cctv.jpg"
           className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
+          src="/foto/cctv.jpg"
         />
 
         <div className="p-4">

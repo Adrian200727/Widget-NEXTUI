@@ -8,7 +8,6 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-
 import {
   Table,
   TableHeader,
@@ -22,6 +21,7 @@ import {
   Radio,
   cn,
 } from "@nextui-org/react";
+
 import { db } from "../../components/lib/firebase/init";
 
 // Definisi tipe data siswa
@@ -48,9 +48,9 @@ export const CustomRadio = ({
 }: CustomRadioProps) => {
   return (
     <Radio
-      {...otherProps}
       value={value}
       onChange={onChange}
+      {...otherProps}
       classNames={{
         base: cn(
           "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between",
@@ -75,7 +75,6 @@ export default function BlogPage() {
   const genderOptions = ["Laki-laki", "Perempuan"];
   const hobbyOptions = ["Membaca", "Bermain Bola", "Menggambar", "Olahraga"];
 
-  // Ambil data dari Firestore
   const fetchData = async () => {
     try {
       const querySnapshot = await getDocs(collection(db, "students"));
@@ -83,6 +82,7 @@ export default function BlogPage() {
         id: doc.id,
         ...(doc.data() as Omit<Student, "id">),
       }));
+
       setStudents(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -93,30 +93,18 @@ export default function BlogPage() {
     fetchData();
   }, []);
 
-  // Tangani perubahan input nama
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setForm({
-      ...form,
-      name: e.target.value,
-    });
+    setForm({ ...form, name: e.target.value });
   };
 
-  // Tangani perubahan gender
   const handleGenderChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setForm({
-      ...form,
-      gender: e.target.value,
-    });
+    setForm({ ...form, gender: e.target.value });
   };
 
   const handleHobbyChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setForm({
-      ...form,
-      hobby: e.target.value,
-    });
+    setForm({ ...form, hobby: e.target.value });
   };
 
-  // Tangani form submit
   const handleSubmit = async () => {
     try {
       const newStudent: Omit<Student, "id"> = {
@@ -129,11 +117,7 @@ export default function BlogPage() {
 
       alert("Siswa berhasil ditambahkan!");
       fetchData();
-      setForm({
-        name: "",
-        gender: "",
-        hobby: "",
-      });
+      setForm({ name: "", gender: "", hobby: "" });
     } catch (error) {
       console.error("Error adding student:", error);
     }
@@ -151,7 +135,6 @@ export default function BlogPage() {
 
   return (
     <div className="container mx-auto p-4">
-      {/* Formulir untuk menambahkan siswa */}
       <div className="mb-4">
         <div className="text-start text-sm text-white mb-2">
           Silakan masukkan nama Anda
@@ -164,7 +147,6 @@ export default function BlogPage() {
           onChange={handleNameChange}
         />
 
-        {/* Gender */}
         <div className="my-5">
           <div className="text-start text-sm text-white mb-2">
             Silakan pilih gender Anda
@@ -178,7 +160,6 @@ export default function BlogPage() {
           </RadioGroup>
         </div>
 
-        {/* Hobi dengan RadioGroup */}
         <div className="my-5">
           <div className="text-start text-sm text-white mb-2">
             Silakan pilih hobi Anda
@@ -193,14 +174,13 @@ export default function BlogPage() {
         </div>
 
         <button
-          onClick={handleSubmit}
           className="bg-white text-black px-4 py-2 rounded hover:bg-blue-600 flex justify-start"
+          onClick={handleSubmit}
         >
           Tambah Siswa
         </button>
       </div>
 
-      {/* Daftar siswa dari Firestore */}
       <div className="mt-24">
         <h2 className="text-lg font-semibold mb-4 border">Daftar Siswa</h2>
         {students.length > 0 ? (
@@ -219,9 +199,9 @@ export default function BlogPage() {
                   <TableCell>{student.hobbies}</TableCell>
                   <TableCell>
                     <Button
-                      onClick={() => handleDelete(student.id)}
                       color="danger"
                       size="sm"
+                      onClick={() => handleDelete(student.id)}
                     >
                       Hapus
                     </Button>
